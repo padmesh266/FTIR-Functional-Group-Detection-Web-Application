@@ -112,5 +112,49 @@ Open in browser:
 Repository URL:
 https://github.com/padmesh266/FTIR-Functional-Group-Detection-Web-Application
 
-## Author Notes
-Update this README as features evolve so users can understand setup, usage, and analysis assumptions.
+How the FTIR Peak Detection Works
+The application processes FTIR spectrum data (wavenumber vs. absorbance) and identifies the most significant peaks that correspond to functional groups. The method relies on basic calculus concepts applied to the spectral curve.
+
+Step 1: Slope (First Derivative)
+The first derivative of the absorbance curve tells us how steeply the signal is rising or falling.
+
+A positive slope means the curve is going upward.
+
+A negative slope means the curve is going downward.
+
+A peak occurs when the slope changes from positive to negative.
+
+Step 2: Curvature (Second Derivative)
+The second derivative measures how sharply the curve bends.
+
+Large values indicate strong curvature, which corresponds to sharp peaks or troughs.
+
+This helps distinguish real peaks from gentle fluctuations.
+
+Step 3: Detecting Peaks
+A point is considered a peak if:
+
+The slope changes sign (from rising to falling).
+
+The curvature is strong enough (above a threshold).
+
+This ensures that only meaningful peaks are detected, not noise.
+
+Step 4: Functional Group Ranges
+Each functional group in chemistry absorbs infrared light in a characteristic wavenumber range. For example:
+
+O–H stretch: 3000–3400 cm⁻¹
+
+C=O stretch: 1600–1700 cm⁻¹
+
+The algorithm checks which detected peaks fall inside these ranges.
+
+Step 5: Selecting the Most Significant Peak
+If multiple peaks fall within the same functional group range, the algorithm chooses the one with the greatest change in slope (largest curvature).
+
+Mathematically, this means selecting the point with the highest absolute value of the second derivative.
+
+This ensures the sharpest, most prominent peak is labeled.
+
+Step 6: Annotation
+The chosen peak is then labeled on the graph with the functional group name and its exact wavenumber. This makes the output clear and easy to interpret.
