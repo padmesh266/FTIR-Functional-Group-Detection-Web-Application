@@ -411,7 +411,7 @@ Then add option in templates/index.html:
 | File won't upload | Check format (.xlsx, .csv) |
 | No columns in dropdown | First row must have headers |
 | Graph won't create | Select both X and Y axes |
-| Can't open browser | Check: http://127.0.0.1:5000 |
+| Can't open browser | Check: http://127.0.0.1:8080 |
 
 ---
 
