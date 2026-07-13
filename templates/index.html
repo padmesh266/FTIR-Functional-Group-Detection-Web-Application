@@ -1,25 +1,109 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>FTIR Analyzer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #e6f0ea);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e4053;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #1abc9c;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        header h2 {
+            margin: 5px 0 0;
+            font-size: 18px;
+            font-weight: normal;
+            color: #d1d1d1;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        main h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #2e4053;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 2px dashed #1abc9c;
+            border-radius: 8px;
+            background: #f9f9f9;
+            cursor: pointer;
+            width: 80%;
+            margin: 15px auto;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        .plot-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8fdfb;
+            border-radius: 10px;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body>
 
-    <h2>Upload FTIR CSV File</h2>
+    <header>
+        <h1>Indian Institute of Technology (BHU), Varanasi</h1>
+        <h2>FTIR - Functional Group Detection Web Application</h2>
+    </header>
 
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Analyze</button>
-    </form>
+    <main>
+        <h2>Upload FTIR CSV File</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br><br>
+            <button type="submit">Analyze</button>
+        </form>
 
-    <br><br>
-
-    {% if plot_html %}
-        <div>
-            {{ plot_html|safe }}
-        </div>
-    {% endif %}
+        {% if plot_html %}
+            <div class="plot-container">
+                {{ plot_html|safe }}
+            </div>
+        {% endif %}
+    </main>
 
 </body>
 </html>
