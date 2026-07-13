@@ -112,7 +112,7 @@ Open in browser:
 Repository URL:
 https://github.com/padmesh266/FTIR-Functional-Group-Detection-Web-Application
 
-How the FTIR Peak Detection Works
+## How the FTIR Peak Detection Works
 The application processes FTIR spectrum data (wavenumber vs. absorbance) and identifies the most significant peaks that correspond to functional groups. The method relies on basic calculus concepts applied to the spectral curve.
 
 Step 1: Slope (First Derivative)
