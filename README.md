@@ -50,16 +50,16 @@ It is designed for quick inspection of FTIR spectra by uploading a file, detecti
 - Rows with invalid numeric values are removed during preprocessing.
 
 ## Functional Group Ranges Used
-| **Wave Number (cm⁻¹)** | **Functional Groups** | **Assignment**                    |
-| ---------------------- | --------------------- | --------------------------------- |
-| 3000–3400              | O–H (υ)               | Alcohol, phenol, carboxylic acids |
-| 2800–3000              | C–H (υ)               | Alkanes, alkanes (stretching)     |
-| 1600–1700              | C=O (υ)               | Ketones, aldehydes                |
-| 1510–1620              | C=C (υ)               | Olefinics, aromatics              |
-| 1325–1460              | C–H (δ)               | Aliphatic (bending)               |
-| 1030–1280              | C–O (υ)               | Alcohol, phenol, ester, ether     |
-| 750–900                | C–H (δ)               | Aromatics (out-of-plane bending)  |
-| 590–785                | Si–O–Si               | Siloxane / silica compounds       |
+| **Wave Number (cm⁻¹)** | **Functional Groups** | **Assignment**                 |
+| ---------------------- | --------------------- | ------------------------------ |
+| 3000–3400              | O–H                | Alcohol, phenol, carboxylic acids |
+| 2800–3000              | C–H                | Alkanes, alkanes (stretching)     |
+| 1600–1700              | C=O                | Ketones, aldehydes                |
+| 1510–1620              | C=C                | Olefinics, aromatics              |
+| 1325–1460              | C–H                | Aliphatic (bending)               |
+| 1030–1280              | C–O                | Alcohol, phenol, ester, ether     |
+| 750–900                | C–H                | Aromatics (out-of-plane bending)  |
+| 590–785                | Si–O–Si            | Siloxane / silica compounds       |
 
 
 ## Project Structure
