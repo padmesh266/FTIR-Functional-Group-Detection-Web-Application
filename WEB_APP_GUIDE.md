@@ -70,7 +70,7 @@ python app.py
 You should see:
 
 ```
- * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:8080
  * Debug mode: on
 ```
 
@@ -81,13 +81,13 @@ You should see:
 Open your web browser and go to:
 
 ```
-http://127.0.0.1:5000
+http://127.0.0.1:8080
 ```
 
 or
 
 ```
-http://localhost:5000
+http://localhost:8080
 ```
 
 ---
@@ -131,7 +131,7 @@ Click "Download Graph" to save as PNG
 **File: sales.xlsx**
 ```
 Month,Sales,Expenses,Profit
-January,5000,3000,2000
+January,8080,3000,2000
 February,6500,3500,3000
 March,7200,3800,3400
 April,8100,4000,4100
@@ -189,7 +189,7 @@ April,8100,4000,4100
 ## 🔧 TROUBLESHOOTING
 
 ### Problem: "Address already in use"
-**Solution:** Port 5000 is busy. Change port in app.py:
+**Solution:** Port 8080 is busy. Change port in app.py:
 ```python
 app.run(debug=True, host='127.0.0.1', port=5001)  # Changed to 5001
 ```
@@ -394,7 +394,7 @@ Then add option in templates/index.html:
 - [ ] app.py in main folder
 - [ ] templates/index.html created
 - [ ] Run: python app.py
-- [ ] Open: http://localhost:5000
+- [ ] Open: http://localhost:8080
 - [ ] Upload Excel file
 - [ ] Select axes
 - [ ] Create graph
@@ -406,7 +406,7 @@ Then add option in templates/index.html:
 
 | Problem | Solution |
 |---------|----------|
-| Port in use | Change port 5000 to 5001 |
+| Port in use | Change port 8080 to 5001 |
 | Module not found | pip install -r requirements.txt |
 | File won't upload | Check format (.xlsx, .csv) |
 | No columns in dropdown | First row must have headers |
