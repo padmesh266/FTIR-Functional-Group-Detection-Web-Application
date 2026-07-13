@@ -106,12 +106,8 @@ Open in browser:
 - Add confidence scores for group matches.
 
 ## GitHub Link Placeholder
-Add your repository URL here:
-
-`YOUR_GITHUB_REPOSITORY_URL_HERE`
-
-Example:
-`https://github.com/your-username/your-repo`
+Repository URL:
+https://github.com/padmesh266/FTIR-Functional-Group-Detection-Web-Application
 
 ## Author Notes
 Update this README as features evolve so users can understand setup, usage, and analysis assumptions.
