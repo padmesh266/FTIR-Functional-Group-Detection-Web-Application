@@ -79,47 +79,44 @@ def index():
 
             peaks = detect_peaks(x, y)
 
+            dy = np.gradient(y)
+            d2y = np.gradient(dy)
+
             annotations = []
             peak_x = []
             peak_y = []
 
-            # ✅ Track which groups already labeled
-            labeled_groups = set()
+            # ✅ For each functional group, pick the peak with greatest slope change
+            for group, low, high in FUNCTIONAL_GROUPS:
+                candidate_indices = [i for i in peaks if low <= x[i] <= high]
 
-            for i in peaks:
-                wn = x[i]
+                if candidate_indices:
+                    best_idx = max(candidate_indices, key=lambda i: abs(d2y[i]))
 
-                for group, low, high in FUNCTIONAL_GROUPS:
-                    if low <= wn <= high and group not in labeled_groups:
+                    wn = x[best_idx]
+                    peak_x.append(wn)
+                    peak_y.append(y[best_idx])
 
-                        peak_x.append(wn)
-                        peak_y.append(y[i])
+                    offset = (max(y) - min(y)) * 0.08
+                    if y[best_idx] > np.mean(y):
+                        y_text = y[best_idx] + offset
+                        arrow_dir = -30
+                    else:
+                        y_text = y[best_idx] - offset
+                        arrow_dir = 30
 
-                        offset = (max(y) - min(y)) * 0.08
-
-                        # shift label away
-                        if y[i] > np.mean(y):
-                            y_text = y[i] + offset
-                            arrow_dir = -30
-                        else:
-                            y_text = y[i] - offset
-                            arrow_dir = 30
-
-                        annotations.append(
-                            dict(
-                                x=wn,
-                                y=y_text,
-                                text=f"{group}",
-                                showarrow=True,
-                                arrowhead=2,
-                                ax=0,
-                                ay=arrow_dir,
-                                font=dict(size=12, color="red")
-                            )
+                    annotations.append(
+                        dict(
+                            x=wn,
+                            y=y_text,
+                            text=f"{group} ({wn:.1f} cm⁻¹)",
+                            showarrow=True,
+                            arrowhead=2,
+                            ax=0,
+                            ay=arrow_dir,
+                            font=dict(size=12, color="red")
                         )
-
-                        labeled_groups.add(group)
-                        break  # ✅ stop after first match
+                    )
 
             # ✅ CREATE GRAPH
             fig = go.Figure()
