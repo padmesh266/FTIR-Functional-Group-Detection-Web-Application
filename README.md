@@ -108,7 +108,7 @@ Open in browser:
 - Export annotated peak tables.
 - Add confidence scores for group matches.
 
-## GitHub Link Placeholder
+## GitHub Link
 Repository URL:
 https://github.com/padmesh266/FTIR-Functional-Group-Detection-Web-Application
 
